@@ -1,0 +1,98 @@
+# ==============================================================================
+# Datos privados. Nada de esto se sube al repositorio.
+# Ver PRIVACY.md para que significa cada cosa.
+# ==============================================================================
+
+# Configuracion personal
+config.toml
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Carpetas de datos personales del usuario
+datos-personales/
+mis-datos/
+personal/
+
+# Documentos que contienen datos reales
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.xls
+*.pptx
+*.odt
+*.rtf
+
+# CVs enviados
+cv-enviado*
+cv-enviado.*
+
+# Pipeline real: solo se versiona pipeline.example.csv
+4-ofertas/pipeline.csv
+4-ofertas/pipeline.csv.bak
+4-ofertas/pipeline.csv.bak-*
+4-ofertas/*.bak
+4-ofertas/*.bak-*
+
+# Postulaciones reales. Solo se versionan el README y las carpetas EJEMPLO_*.
+5-postulaciones/*
+!5-postulaciones/README.md
+!5-postulaciones/EJEMPLO_*/
+!5-postulaciones/EJEMPLO_*/**
+
+# Backups, historiales y archivos retirados
+*.bak
+*.bak-*
+*.tmp
+*.temp
+*.orig
+*.rej
+*.swp
+*~
+_archivo/
+_retirados*/
+
+# Resultados de scripts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.log
+
+# Editores y sistema
+.vscode/
+.idea/
+*.sublime-*
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Entornos
+.venv/
+venv/
+env/
+env.bak/
+node_modules/
+
+# Secretos que se te olvidan
+*.secret
+secrets.yml
+credentials.json
+service-account*.json
+
+# ==============================================================================
+# Lo que SÍ se versiona (por si tu .gitignore es demasiado agresivo)
+# ==============================================================================
+!4-ofertas/pipeline.example.csv
+!4-ofertas/config.example.toml
+!.env.example
+!**/.gitkeep
+
+# Los ficheros de texto de la plantilla pueden llevar marcadores entre
+# corchetes como [TU_NOMBRE]: eso no son datos personales.

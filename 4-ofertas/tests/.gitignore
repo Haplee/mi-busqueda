@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+4-ofertas/pipeline.csv
+4-ofertas/pipeline.csv.bak
+4-ofertas/pipeline.csv.bak-*
+4-ofertas/config.toml
+
+# La plantilla de ejemplo vive aqui, y si no se desbloquea explicitamente
+# estas reglas se la tragarian.
+!4-ofertas/pipeline.example.csv
+!4-ofertas/config.example.toml
+!7-networking/contactos.example.csv

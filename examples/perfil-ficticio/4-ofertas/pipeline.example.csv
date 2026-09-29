@@ -1,0 +1,3 @@
+ID,Fecha,Empresa,Puesto,Ubicacion,Modalidad,Contrato,Salario,Fuente,URL,Estado,Contacto,ProximaAccion,FechaSeguimiento,Encaje,Notas
+EJEMPLO-2026-01-15_Empresa_Ficticia_Tecnico,2026-01-15,Empresa Ficticia SL,Tecnico de soporte,Ciudad Ficticia,Hibrido,Indefinido,30000-35000,Portal Ficticio,https://example.com/empleo/1,EJEMPLO,contacto@ejemplo.com,Preparar carta,2026-01-25,8,Linea de ejemplo. No cuenta en las metricas.
+EJEMPLO-2026-02-03_Consultora_Ficticia_Soporte,2026-02-03,Consultora Ficticia,Soporte nivel 2,Remoto,Remoto,Indefinido,32000-38000,Portal Ficticio,https://example.com/empleo/2,EJEMPLO,reclutacion@ejemplo.com,Descartar,,7,Linea de ejemplo. No cuenta en las metricas.

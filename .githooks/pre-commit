@@ -1,0 +1,23 @@
+#!/bin/sh
+# Comprobacion de privacidad antes de cada commit.
+#
+# Se activa con:
+#     git config core.hooksPath .githooks
+#
+# O copias este fichero a .git/hooks/pre-commit (Linux y macOS) o a
+# .git/hooks/pre-commit (con shebang bash en Windows con Git Bash).
+
+if command -v python3 >/dev/null 2>&1; then
+    PY=python3
+else
+    PY=python
+fi
+
+if ! "$PY" scripts/check-privacidad.py; then
+    echo ""
+    echo "Commit cancelado: hay datos personales en lo preparado."
+    echo "Revisa PRIVACY.md para saber como resolverlo."
+    exit 1
+fi
+
+exit 0

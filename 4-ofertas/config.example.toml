@@ -1,0 +1,98 @@
+# ==============================================================================
+# config.example.toml
+#
+# Copia este archivo a config.toml y edita config.toml. config.toml esta en
+# .gitignore: nunca se sube al repositorio.
+#
+#     cp 4-ofertas/config.example.toml 4-ofertas/config.toml
+#
+# Todos los filtros de este repo salen de aqui. Si un filtro esta en el codigo,
+# es un bug.
+# ==============================================================================
+
+# Ruta a la raiz del repositorio.
+# Relative a este archivo, no absoluta: el repo tiene que funcionar en el
+# ordenador de otra persona. Si la dejas vacia, se calcula automaticamente.
+repo_root = "../.."
+
+
+[busqueda]
+# Palabras clave para detectar ofertas. Usa sinonimos: el mismo puesto se llama
+# de varias formas segun la empresa y el pais.
+keywords = [
+    "[TU_PUESTO]",
+    "[SINONIMO_1]",
+    "[SINONIMO_2]",
+]
+
+# Palabras que, si aparecen, hacen descartar la oferta.
+# Usalo con cabeza: "no presencial" contiene "presencial".
+exclude_keywords = [
+    "[LO QUE NO TE INTERESA]",
+]
+
+# Terminos en otros idiomas, si buscas tambien fuera del pais.
+# Ejemplo: keywords_en = ["support engineer", "helpdesk"]
+
+
+[preferencias]
+# Modalidades que aceptas. Valores: Remoto, Hibrido, Presencial.
+# Cuidado con el filtro doble: si pones "solo remoto" aqui Y en el buscador del
+# portal, estas filtrando dos veces. Ver 0-objetivo-y-estrategia/guia-de-filtros.md
+modalidades = ["[MODALIDAD]"]
+
+# Tipos de contrato que aceptas. Valores: Indefinido, Temporal, Practicas,
+# Autonomo. Lee la guia de filtros antes de excluir Temporal.
+contratos = ["Indefinido", "Temporal"]
+
+# Salario minimo anual aceptable. 0 = sin filtro de salario.
+# Ponerlo alto aqui es la causa mas comun de cero resultados.
+salario_minimo = 0
+
+# Idiomas exigibles con nivel minimo. Vacio = no filtrar por idioma.
+# Formato: [{ idioma = "Ingles", nivel = "B2" }]
+idiomas = []
+
+
+[scoring]
+# Pesos de cada dimension en el calculo del encaje (0-10 cada una).
+# Se suman y se normalizan a 10. El detalle por dimension lo muestra
+# ver-ofertas.py; el total es solo un resumen.
+peso_rol = 3
+peso_habilidades = 2
+peso_seniority = 1
+peso_ubicacion = 1
+peso_contrato = 1
+
+# A partir de este encaje, la oferta se marca como Interesante automaticamente.
+umbral_interesante = 7
+
+
+[fuentes]
+# Portales desde los que se leen ofertas publicas.
+# El repo NO hace login ni envia candidaturas: solo lee lo que es publico.
+# Respeta los terminos de cada portal. Ver PRIVACY.md.
+activas = ["[PORTAL_1]"]
+
+# Espera maxima entre peticiones, en segundos. No lo bajes: Faster es como te
+# bloquean.
+delay_entre_peticiones = 3
+
+# User-Agent honesto, para que el portal sepa quien lee.
+user_agent = "mi-busqueda/1.0 (plantilla local; sin automatizacion de candidatura)"
+
+
+[privacidad]
+# Palabras que jamas deben aparecer en un commit.
+# Anade aqui tu nombre y apellidos, tu usuario de GitHub, tu ciudad.
+#
+# El archivo de ejemplo va vacio a proposito: los marcadores [TU_NOMBRE] son
+# instrucciones, no datos, y buscarlos solo generaria ruido.
+palabras_prohibidas = [
+    # "tu-alias",
+    # "nombre-de-tu-empresa-anterior",
+]
+
+# Las filas con Estado = este valor no cuentan en las metricas.
+# Sirve para pruebas y demos.
+estado_ejemplo = "EJEMPLO"

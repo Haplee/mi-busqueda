@@ -1,0 +1,38 @@
+name: Sugerencia
+
+title: "[Idea] "
+
+labels: ["mejora"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Para bugs, usa la plantilla de bug. Aqui van mejoras de cualquier tipo.
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: Que problema resuelve
+      description: El problema concreto, no la solucion que tienes en mente.
+    validations:
+      required: true
+
+  - type: textarea
+    id: propuesta
+    attributes:
+      label: Tu propuesta
+
+  - type: dropdown
+    id: alcance
+    attributes:
+      label: Donde cae
+      options:
+        - Documentos y plantillas
+        - Scripts del pipeline
+        - Privacidad y seguridad
+        - Estructura del repo
+        - Documentacion
+        - No lo se
+    validations:
+      required: true

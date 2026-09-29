@@ -1,0 +1,22 @@
+# Normaliza los finales de linea para que el repo sea igual en todos los sistemas.
+#
+# Windows, macOS y Linux escriben distinto. Sin esto, cada clon en un sistema
+# distinto genera un diff entero, y en un repo de plantillas eso es ruido puro.
+
+# Por defecto: LF en el repositorio, nativo en checkout.
+* text=auto eol=lf
+
+# Windows necesita CRLF en su copia de trabajo.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# El hook tiene que ser ejecutable en Linux y WSL.
+.githooks/pre-commit text eol=lf
+
+# Ficheros que no son texto.
+*.png binary
+*.jpg binary
+*.pdf binary
+*.xlsx binary
+*.docx binary
